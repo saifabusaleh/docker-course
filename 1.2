@@ -1,0 +1,33 @@
+saifs-MBP:docker saifabusaleh$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+75e91b55e508        nginx               "nginx -g 'daemon of…"   4 minutes ago       Up 4 minutes        80/tcp              angry_cerf
+saifs-MBP:docker saifabusaleh$ docker stop 75e
+75e
+saifs-MBP:docker saifabusaleh$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+saifs-MBP:docker saifabusaleh$ docker prune
+docker: 'prune' is not a docker command.
+See 'docker --help'
+saifs-MBP:docker saifabusaleh$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+550af93d47b4585979335faab45add6034b005cc9187518b50559ff26b40acd5
+69e24a732c5210e748ded039b42a16a54fa518bcc04dcd6f025f0b32f88ee55d
+75e91b55e508d7bffbd876bcca3a4cc2571a7d8aa684e638c268995338ec37cb
+
+Total reclaimed space: 0B
+saifs-MBP:docker saifabusaleh$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+saifs-MBP:docker saifabusaleh$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+nginx               latest              ab56bba91343        19 hours ago        126MB
+saifs-MBP:docker saifabusaleh$ docker rmi ab5
+Untagged: nginx:latest
+Untagged: nginx@sha256:9688d0dae8812dd2437947b756393eb0779487e361aa2ffbc3a529dca61f102c
+Deleted: sha256:ab56bba91343aafcdd94b7a44b42e12f32719b9a2b8579e93017c1280f48e8f3
+Deleted: sha256:57d7b96ffad6ea05fe17c800b518a2a04ff9cca78ba2ccd7b935f67a8106530f
+Deleted: sha256:9d8204abdaaec18fe2d87a461ca9e67c31466b33c7b48c13c79b8286bde5739d
+Deleted: sha256:2db44bce66cde56fca25aeeb7d09dc924b748e3adfe58c9cc3eb2bd2f68a1b68
+saifs-MBP:docker saifabusaleh$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE

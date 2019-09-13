@@ -1,0 +1,41 @@
+aifs-MBP:docker saifabusaleh$ docker run -d nginx
+Unable to find image 'nginx:latest' locally
+latest: Pulling from library/nginx
+b8f262c62ec6: Pull complete 
+a6639d774c21: Pull complete 
+22a7aa8442bf: Pull complete 
+Digest: sha256:9688d0dae8812dd2437947b756393eb0779487e361aa2ffbc3a529dca61f102c
+Status: Downloaded newer image for nginx:latest
+75e91b55e508d7bffbd876bcca3a4cc2571a7d8aa684e638c268995338ec37cb
+saifs-MBP:docker saifabusaleh$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+75e91b55e508        nginx               "nginx -g 'daemon of…"   3 seconds ago       Up 2 seconds        80/tcp              angry_cerf
+saifs-MBP:docker saifabusaleh$ docker run -d nginx
+69e24a732c5210e748ded039b42a16a54fa518bcc04dcd6f025f0b32f88ee55d
+saifs-MBP:docker saifabusaleh$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+69e24a732c52        nginx               "nginx -g 'daemon of…"   3 seconds ago       Up 2 seconds        80/tcp              zen_goodall
+75e91b55e508        nginx               "nginx -g 'daemon of…"   25 seconds ago      Up 24 seconds       80/tcp              angry_cerf
+saifs-MBP:docker saifabusaleh$ docker run -d nginx
+550af93d47b4585979335faab45add6034b005cc9187518b50559ff26b40acd5
+saifs-MBP:docker saifabusaleh$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+550af93d47b4        nginx               "nginx -g 'daemon of…"   3 seconds ago       Up 1 second         80/tcp              nervous_hertz
+69e24a732c52        nginx               "nginx -g 'daemon of…"   7 seconds ago       Up 6 seconds        80/tcp              zen_goodall
+75e91b55e508        nginx               "nginx -g 'daemon of…"   29 seconds ago      Up 28 seconds       80/tcp              angry_cerf
+saifs-MBP:docker saifabusaleh$ docker stop 550
+550
+saifs-MBP:docker saifabusaleh$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS               NAMES
+69e24a732c52        nginx               "nginx -g 'daemon of…"   45 seconds ago       Up 44 seconds       80/tcp              zen_goodall
+75e91b55e508        nginx               "nginx -g 'daemon of…"   About a minute ago   Up About a minute   80/tcp              angry_cerf
+saifs-MBP:docker saifabusaleh$ docker stop 69e
+69e
+saifs-MBP:docker saifabusaleh$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS               NAMES
+75e91b55e508        nginx               "nginx -g 'daemon of…"   About a minute ago   Up About a minute   80/tcp              angry_cerf
+saifs-MBP:docker saifabusaleh$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS                      PORTS               NAMES
+550af93d47b4        nginx               "nginx -g 'daemon of…"   About a minute ago   Exited (0) 46 seconds ago                       nervous_hertz
+69e24a732c52        nginx               "nginx -g 'daemon of…"   About a minute ago   Exited (0) 32 seconds ago                       zen_goodall
+75e91b55e508        nginx               "nginx -g 'daemon of…"   About a minute ago   Up About a minute           80/tcp              angry_cerf
